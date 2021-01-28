@@ -1,0 +1,19 @@
+func<-function(x){
+    3102.5415*x^2-67303.7212*x+156039.7697
+  }
+x0<-1.6
+x1<-2
+precision <- 1.e-12
+max <- 1000
+diff <- 1
+i <- 0
+while (diff > precision && i < max){
+    x2 <- x1 - func(x1) / ((func(x1) - func(x0)) / (x1 - x0))
+    diff <- abs(x2-x1)
+    cat("Iteration ", i+1, ":", x1, "|| Value of f(x(k)): ", func(x2), "\n")
+    x0 <- x1
+    x1 <- x2 
+    i <- i+1
+  }
+
+

@@ -1,0 +1,20 @@
+func<-function(x){
+    x^2 - 2*x + 1
+  }
+funcd<-function(x){
+    2*x - 2
+  }
+x0 <- 1.1
+precision <- 1.e-12
+max <- 1000
+diff <- 1
+xi <- x0
+i <- 0
+while (diff > precision && i < max){
+    diff <- abs(func(xi)/funcd(xi)/xi)
+    x1 <- xi - func(xi)/funcd(xi)
+    cat("Iteration ", i+1, ":", x1, "|| Value of f(x(k)): ", func(x1), "\n")
+    xi<-x1
+    i <- i+1
+  }
+

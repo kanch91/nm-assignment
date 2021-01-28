@@ -1,0 +1,25 @@
+title: "Q1b: Bisection Method"
+output: html_notebook
+#Equation
+f.acc<-function(x){
+   0.8+(acos(1-x)-(1-x)*sqrt(2*x-x*x))/(pi)
+}
+#Assigning values to the variables
+xLeft <- 0
+xRight <- 1
+epsilon <- 1e-7
+max <- 50
+i <- 1
+while (i < max && abs(xRight-xLeft) > epsilon){
+  xMid <- (xLeft + xRight)/2
+  if (f.acc(xMid) * f.acc(xRight) < 0){
+    xLeft <- xMid
+  }
+  else{
+    xRight <- xMid
+  }
+  i <- i +1
+  cat("Value of mid after", i-1, "iteration is:", xMid, "\n")
+}
+
+

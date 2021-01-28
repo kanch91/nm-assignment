@@ -1,0 +1,18 @@
+func<-function(x){
+    x^2-2.2*x+1.2
+  }
+funcg<-function(x){
+    x+1.00*-1.2/(x-2.2)
+  }
+x0<-1.21
+e<-0.0000000001
+iter<-50
+i<-1
+x1<-funcg(x0)
+while (abs(func(x1)) > e && i<=iter){
+  x1<-funcg(x0)
+  cat("Iteration ", i,", x1: ", x1, " || f(x1): ", func(x1),"\n")
+  x0<-x1
+  i = i+1
+}
+
