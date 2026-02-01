@@ -1,5 +1,5 @@
-# nm-assignment
- All the codes used in NM assignment 1
+# mini-projets
+ All the codes used in the set of mini-projects
  
  # Directory Structure
     - Q1: Four R-markdowns, one for each part
